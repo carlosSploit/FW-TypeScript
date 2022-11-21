@@ -1,0 +1,33 @@
+# ruta encargarda de listar
+GET http://localhost:5000/genetic/ HTTP/1.1
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5NjkyODAyNTUsIm5vbWJyZSI6ImJyYWRjYXIiLCJlbWFpbCI6InVjdjIwMjFAZW1haWwuY29tIn0sImlhdCI6MTY0NzY2OTY0M30.E6MQy_q72P3FajQMLBPvO88jtPQo2N6XWA7rBR-HNR4
+
+### ruta encargarda de listar
+GET http://localhost:5000/connet/ HTTP/1.1
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5NjkyODAyNTUsIm5vbWJyZSI6ImJyYWRjYXIiLCJlbWFpbCI6InVjdjIwMjFAZW1haWwuY29tIn0sImlhdCI6MTY0NzY2OTY0M30.E6MQy_q72P3FajQMLBPvO88jtPQo2N6XWA7rBR-HNR4
+
+### ruta de error
+GET http://localhost:5000/genetic/ HTTP/1.1
+
+### generar un token
+GET http://localhost:5000/tokeniser/ HTTP/1.1
+
+### ftp google insertar
+GET http://localhost:5000/ftpgoogle/uploud HTTP/1.1
+
+### ftp google delect
+GET http://localhost:5000/ftpgoogle/delect/1M5YRk9y_OPgUX3cV9UEGIFFi2bv2Plge HTTP/1.1
+
+### ftp google leerUrl
+GET http://localhost:5000/ftpgoogle/read/1M5YRk9y_OPgUX3cV9UEGIFFi2bv2Plge HTTP/1.1
+
+### ruta encargarda de listar
+POST http://localhost:5000/genetic/gmail HTTP/1.1
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5NjkyODAyNTUsIm5vbWJyZSI6ImJyYWRjYXIiLCJlbWFpbCI6InVjdjIwMjFAZW1haWwuY29tIn0sImlhdCI6MTY0NzY2OTY0M30.E6MQy_q72P3FajQMLBPvO88jtPQo2N6XWA7rBR-HNR4
+Content-Type: application/json
+
+{
+    "to": "cavarithprueba2004@gmail.com",
+    "title": "Titulo de prueba",
+    "messege": "asjdaskdj asldjaskdas alskdjalskdkasjdaskld ksjadlksajd laskjdalsk djaslkdjas dkasjdaslk djaslkd"
+}

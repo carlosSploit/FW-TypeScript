@@ -1,0 +1,109 @@
+// https://www.youtube.com/watch?v=u6PGbw1tfGM
+
+# Creacion de esquiemas
+Para nosotros poder crear un esquema en mongodb, tenemos que usar el objeto Schema donde
+dentro de el se le colocara las variables, que puede ser tipo String o number, finalmente
+este esquema se prodra exportar por medio de un metododo llamado model donde se le pasara
+el nombre y el Schema antes creado, como se presenta en el siguiente ejemplo
+
+'''
+require('../config/lib/connet_mongo')
+const {Schema, model} = require('mongoose')
+
+const Noteschema = new Schema({
+    title: {
+        type:String,
+        require: true
+    },
+    description:{
+        type:String,
+        require: true
+    }
+},{// decirle que cada ves que se actualize, tenga algo temporal
+    timestamps: true,
+    // eliminar las verciones de key
+    versionkey:false
+})
+
+const modeelo = model('node', Noteschema)
+module.exports = modeelo
+'''
+Tener en cuenta que estos esquemas por buenas practivas se encontraran en una capeta
+denominada controlador (considerando el patron de diseño n capas), donde se hara uso
+a posterior
+
+# Creacion del model
+Considerando la metodologia n capas, se usara unos modelos donde se incluiran los metodos
+de la base de datos, por ende, esto se dara de la siguiente manera:
+
+'''
+const modeelo = require('./node')
+
+module.exports = class bdmodel{
+    
+    listar = async() => {
+        const persona = await modeelo.find()
+        console.log(persona)
+    }
+
+    crear = async() => {
+        const persona = new modeelo(
+            {
+                title: "comeme la pila",
+                description: "agustisimo que me la como" 
+            }
+        )
+        
+        const result = await persona.save()
+        console.log(result)
+    }
+
+    actualizar = async(id) => {
+        const result = await persona.updateOne({_id: id},{
+            $set:{
+                title: "comeme la pila",
+                description: "agustisimo que me la como"
+            }
+        })
+        return result
+    }
+
+    eliminar = async(id) => {
+        const result = await persona.deleteOne({_id: id})
+        return result
+    }
+
+}
+'''
+
+Tener en cuenta que en mongo se realizan las siguientes operaciones, considernado la estructura
+del Schema antes creado:
+
+'''
+modeelo.find() : lista todos los objetos relacionados con el Schema como
+                 una lista de productos
+
+persona.save() : añade los datos a la base, considerando la extructura del esquema,
+                 como se ve reflejado en lo siguiente -
+                 ---------
+                 modeelo(
+                    {
+                        title: "comeme la pila",
+                        description: "agustisimo que me la como" 
+                    }
+                )
+                ----------
+                Donde el Schema llamado Modeelo tiene un title y una descripcionm
+                considerando que estos dos son obligatorios de llenar
+
+persona.updateOne({_id: id}) : Actualiza los datos en llenar, teniendo en cuenta los
+                               el Schema antes mencionado. Por otro lado hay que
+                               considerar que este metodo tambien presenta otros datos
+                               como seria los a actualizar, que se incluirian al costado
+                               del {_id:id} un json o un mapa donde estaran dichos datos.
+                               Tener en cuenta que la actualizacion tendra que estar dentro
+                               de la tupla $set: para que pueda reconocerlo el metodo.
+
+persona.deleteOne({_id: id}) : Ayuda a eliminar un dato del Schema teniendo en cuenta el id
+                               del objeto antes creado.
+'''

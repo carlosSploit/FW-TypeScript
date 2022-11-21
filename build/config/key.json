@@ -1,0 +1,26 @@
+{
+    "googledrive": {
+        "CLIENT_ID": "368279704593-vn92156sek6np0c2122hevrte4m3bidd.apps.googleusercontent.com",
+        "CLIENT_SECRET": "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",
+        "REDIRECT_URI": "https://developers.google.com/oauthplayground",
+        "REFRESH_TOKEN": "1//04EPT8Zd3cmDUCgYIARAAGAQSNwF-L9IrhOJzvjMT13a0s0xN0CG1k98fnfBjR-JoUpuv4Y7t_CrmDMwKd_YPVOIA8PDgPxQIw1M"
+    },
+    "cloudinary": {
+        "CLOUND_NAME": "canvarith",
+        "API_KEY": "811518876614641",
+        "API_SECRET": "xO8k2ygfcVnZldrMrYVeEk05Tks"
+    },
+    "gmailcredencial": {
+        "USSER": "cavarithprueba2004@gmail.com",
+        "CLIENT_ID": "368279704593-vn92156sek6np0c2122hevrte4m3bidd.apps.googleusercontent.com",
+        "CLIENT_SECRET": "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",
+        "REDIRECT_URI": "https://developers.google.com/oauthplayground",
+        "REFRESH_TOKEN": "1//04G-RyiOaGdvWCgYIARAAGAQSNwF-L9IrvvBeWAV3LLLmP9lFLHtsbdNB_gNqv1W0pd3Mrt3JxEFI-Y8ctiLRIk7ol9DPfEoCovE"
+    },
+    "cpanelsmtp": {
+        "HOST": "",
+        "PORT": "",
+        "USSER": "",
+        "PASS": ""
+    }
+}
