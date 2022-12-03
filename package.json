@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node build/server.js",
     "dev": "ts-node-dev server.ts",
+    "build": "tsc --build --clean && tsc --build",
     "dev2": "tsc && nodemon build/server.js",
     "test": "jest",
     "tsc": "tsc",

@@ -11,6 +11,7 @@ de correr la aplicacion
 ```
 npm run start // ejecutar en modo deployd
 npm run dev // ejecutar en modo desarrollador
+npm run build // dar build al codigo de typescrip para generar el codigo typescript
 ```
 # correr el test
 ```

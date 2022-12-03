@@ -2,7 +2,7 @@
 GET http://localhost:5000/api/usuario/ HTTP/1.1
 
 ### LISTAR LOS USUARIO POR ID
-GET http://localhost:5000/api/usuario/ HTTP/1.1
+GET http://localhost:5000/api/usuario/123145647 HTTP/1.1
 
 ### INSERTA UN USUARIO
 POST http://localhost:5000/api/usuario/ HTTP/1.1
