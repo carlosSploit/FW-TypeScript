@@ -1,0 +1,14 @@
+### LISTAR LOS USUARIO
+GET http://localhost:5000/api/usuario/ HTTP/1.1
+
+### LISTAR LOS USUARIO POR ID
+GET http://localhost:5000/api/usuario/ HTTP/1.1
+
+### INSERTA UN USUARIO
+POST http://localhost:5000/api/usuario/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id": "985796307",
+    "username": "Carlos Alberto Guerrero Garcia"
+}
